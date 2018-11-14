@@ -1,0 +1,16 @@
+Deobfusacte Azur Lane scripts bundle.
+
+Requirements:
+Salt assembly from Azur Lane game data (com.YoStarEN.AzurLane\main.544.com.YoStarEN.AzurLane\assets\Salt inside the obb bundle).
+
+Building:
+Copy Salt assembly to working directory and rename to Salt.dll
+csc /reference:Salt.dll deobf.cs
+
+Usage:
+deobf <obfuscated scripts path> <deobfuscated scripts path>
+
+Notes:
+The game scripts live at com.YoStarEN.AzurLane\main.544.com.YoStarEN.AzurLane\assets\AssetBundles\scripts inside the obb bundle. This file is obfuscated with a simple obfuscation scheme that cycles between TEA, XTEA, XXTEA, and xor'ing, all with a hardcoded key. After deobfuscation, the scripts file is a Unity AssetBundle.
+
+
